@@ -60,9 +60,3 @@ accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 # Detailed classification report
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
-import shap
-# Create a SHAP explainer (this requires additional setup and may be complex for large datasets)
-explainer = shap.LinearExplainer(model, X_train)
-shap_values = explainer.shap_values(X_test)
-# Visualize SHAP values for a sample
-shap.force_plot(explainer.expected_value, shap_values[0,:], X_test[0,:], matplotlib=True)
